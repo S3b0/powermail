@@ -124,8 +124,8 @@ abstract class AbstractValidator extends ExtbaseAbstractValidator implements Val
         $this->settings = $typoScriptSetup['plugin.']['tx_powermail.']['settings.']['setup.'];
 
         $flexFormXml = $configurationManager->getContentObject()->data['pi_flexform'];
-        $flexForm = GeneralUtility::xml2array($flexFormXml, 'data');
-        $this->flexForm = $flexForm[0];
+        $flexForm = reset(GeneralUtility::xml2array($flexFormXml, 'data'));
+        $this->flexForm = $flexForm;
     }
 
     /**
