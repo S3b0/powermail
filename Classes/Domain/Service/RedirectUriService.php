@@ -128,8 +128,8 @@ class RedirectUriService
      */
     protected function getFlexFormArray()
     {
-        $flexForm = GeneralUtility::xml2array($this->contentObject->data['pi_flexform'], 'data');
-        return !empty($flexForm[0]) ? $flexForm[0] : null;
+        $flexForm = reset(GeneralUtility::xml2array($this->contentObject->data['pi_flexform'], 'data'));
+        return !empty($flexForm) ? $flexForm : null;
     }
 
     /**
